@@ -1,0 +1,30 @@
+version: "3.4"
+services:
+  web-app:
+    platform: linux/amd64
+    image: web_app
+    container_name: web_app_1
+    build: web_app
+    command: flask run --host 0.0.0.0 --port 5000
+    ports:
+      - 5004:5000
+    links:
+      - mongodb
+    volumes:
+      - ./web_app:/web_app
+    stdin_open: true
+    tty: true
+    environment:
+      FLASK_ENV: local
+      FLASK_DEBUG: 1
+      ENV_FOR_DYNACONF: local
+      CHROMADB_HOST: chromadb
+      MONGODB_HOST: mongodb
+      MONGODB_DB: mongodb
+  mongodb:
+    image: library/mongo:7.0
+    container_name: mongodb_1
+    ports:
+      - 27017:27017
+    volumes:
+      - ./tmp:/tmp_files

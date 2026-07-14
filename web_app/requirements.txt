@@ -1,0 +1,11 @@
+torch==2.4.0
+flask==3.0.3
+mongoengine==0.28.2
+pandas==2.2.2
+pyarrow==17.0.0
+fsspec==2024.6.1
+huggingface_hub==0.24.6
+sentence-transformers==3.0.1
+transformers==4.44.2
+scikit-learn==1.5.1
+chromadb==0.5.5
