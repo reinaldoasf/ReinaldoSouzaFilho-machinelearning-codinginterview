@@ -1,0 +1,14 @@
+.git
+**/*.py[cod]
+**/*.dat
+**/*.log
+**/*.swp
+.pytest_cache
+.bash_history
+.python-version
+.log/
+.idea/
+.venv/
+venv/
+.direnv/
+**/__pycache__/
