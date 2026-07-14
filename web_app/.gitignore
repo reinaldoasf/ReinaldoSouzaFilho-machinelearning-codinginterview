@@ -1,0 +1,24 @@
+# Python packaging / Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+celerybeat-schedule*
+celerybeat.pid
+.pytest_cache
+.direnv/
+venv
+
+# Other
+.vscode/
+.DS_Store
+.idea
+.env
+
+*.hardlink-temporary
+*.log
+.vagrant

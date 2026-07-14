@@ -10,6 +10,7 @@ services:
       - 5004:5000
     links:
       - mongodb
+      - chromadb
     volumes:
       - ./web_app:/web_app
     stdin_open: true
@@ -19,6 +20,7 @@ services:
       FLASK_DEBUG: 1
       ENV_FOR_DYNACONF: local
       CHROMADB_HOST: chromadb
+      CHROMADB_PORT: 8000
       MONGODB_HOST: mongodb
       MONGODB_DB: mongodb
   mongodb:
@@ -28,3 +30,10 @@ services:
       - 27017:27017
     volumes:
       - ./tmp:/tmp_files
+  chromadb:
+    image: chromadb/chroma:0.5.5
+    container_name: chromadb_1
+    ports:
+      - 8001:8000
+    volumes:
+      - ./tmp/chroma:/chroma/chroma
